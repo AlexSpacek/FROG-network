@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -17,10 +11,6 @@ from keras.layers import ( Conv2D, Flatten, Lambda, Dense, concatenate,
 from keras.models import Model
 from sklearn.utils import class_weight
 import sys
-sys.path
-sys.path.append('C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.2/bin')
-sys.path.append('C:/Users/RippS/cuda/bin/cudnn64_8.dll')
-sys.path.append('C:/Users/RippS/miniconda3')
 
 
 # Parameters
@@ -61,7 +51,7 @@ model = Model(inputs=model_d.input, outputs=[out])
 model.compile(loss='mse', optimizer='Adam',metrics=['mean_squared_error'])
 
 # Train model on dataset
-checkpoint_path = "CheckpointsMorePhaseNoiseElu/weights.{epoch:02d}-{val_loss:.3f}.hdf5"
+checkpoint_path = "Checkpoints/weights.{epoch:02d}-{val_loss:.3f}.hdf5"
 # SAVE_PERIOD = 1
 # STEPS_PER_EPOCH = 25000 / 25
 cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
