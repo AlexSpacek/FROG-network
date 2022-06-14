@@ -1,15 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import numpy as np
 from tensorflow import keras
-
-
-
-# In[ ]:
 
 
 class DataGenerator(keras.utils.Sequence):
